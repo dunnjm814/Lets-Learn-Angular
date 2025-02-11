@@ -105,3 +105,7 @@ A signal is an object that stores a value (any type).
 Angular manages subscriptions to signals and gets notified about value changes.
 When a change occurs angular is able to update relevant ui about that change.
 Signals only available for versions 16+
+
+## Flexible components
+
+Use the @Input decorator from angular core to allow properties to be set via external sources
