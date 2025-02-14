@@ -109,3 +109,27 @@ Signals only available for versions 16+
 ## Flexible components
 
 Use the @Input decorator from angular core to allow properties to be set via external sources
+
+conversely @Output decorator allows for data flow from child components or directives to flow to parent component. child component uses EventEmitter from @angular/core to emit custom events
+
+$event is the event value that is emitted from the EventEmitter in our event binding.
+
+##Types and Interfaces
+
+```
+interface X {
+    a: number
+    b: string
+}
+
+type X = {
+    a: number
+    b: string
+};
+```
+
+###Differences Between Type Aliases and Interfaces
+
+Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
+
+[Typescript Type vs Interface](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)

@@ -1,8 +1,14 @@
-import { Component, computed, signal, Input } from '@angular/core';
+import { Component, computed, signal, Input, Output, EventEmitter, input, output } from '@angular/core';
 
 // import { DUMMY_USERS } from '../dummy-users';
 
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
+
+type User = {
+  id: string;
+  avatar: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-user',
@@ -26,10 +32,18 @@ export class UserComponent {
   // }
 
   // starting section for flexible / reusable component definitions
-  @Input({required: true}) avatar! : string;
-  @Input() name! : string;
+  // @Input({required: true}) id!: string;
+  // @Input({required: true}) avatar! : string;
+  // @Input() name! : string;
+  // passing objects as inputs
+  @Input({required: true}) user!: User;
+  @Output() select = new EventEmitter();
+  // use output() to create the automatic instance of event emitter
+  // select = output<string>();
   get imagePath(){
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
-  onSelectUser(){}
+  onSelectUser(){
+    this.select.emit(this.user.id);
+  }
 }
