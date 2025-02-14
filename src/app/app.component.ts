@@ -14,7 +14,7 @@ import { TasksComponent } from './tasks/tasks.component';
 export class AppComponent {
   title = 'lets-learn-angular';
   users = DUMMY_USERS;
-  selectedUserId = '';
+  selectedUserId?: string;
 
   get selectedUser(){
     return this.users.find((u)=> u.id === this.selectedUserId)!;

@@ -31,6 +31,7 @@ export class UserComponent {
   // @Input() name! : string;
   // passing objects as inputs
   @Input({required: true}) user!: User;
+  @Input({required: true}) selected!: boolean;
   @Output() select = new EventEmitter();
   // use output() to create the automatic instance of event emitter
   // select = output<string>();

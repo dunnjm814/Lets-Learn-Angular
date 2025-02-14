@@ -16,7 +16,6 @@ export class TasksComponent {
   tasks = DUMMY_TASKS;
 
   get selectedUserTasks(){
-    console.log(this.tasks.filter((t)=> t.userId === this.userId))
     return this.tasks.filter((t)=> t.userId === this.userId)
   }
 }
