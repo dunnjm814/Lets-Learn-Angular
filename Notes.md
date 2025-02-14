@@ -112,9 +112,9 @@ Use the @Input decorator from angular core to allow properties to be set via ext
 
 conversely @Output decorator allows for data flow from child components or directives to flow to parent component. child component uses EventEmitter from @angular/core to emit custom events
 
-$event is the event value that is emitted from the EventEmitter in our event binding.
+`$event` is the event value that is emitted from the EventEmitter in our event binding.
 
-##Types and Interfaces
+## Types and Interfaces
 
 ```
 interface X {
@@ -128,7 +128,7 @@ type X = {
 };
 ```
 
-###Differences Between Type Aliases and Interfaces
+### Differences Between Type Aliases and Interfaces
 
 Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
 
@@ -143,3 +143,31 @@ two way binding: Two-way binding in Angular allows synchronization of data betwe
 
 not all directives use two way binding, ngModel is one that does.
 `[(ngModel)]` is the syntax angular recognizes for two way data binding.
+
+## Content Projection
+
+Content projection in Angular is a powerful feature that allows you to insert or project content from one component into another. It is primarily achieved using the <ng-content> element, which acts as a placeholder for the projected content.
+
+## Conditional content projection
+
+If your component needs to conditionally render content, or render content multiple times, you should configure that component to accept an `<ng-template>` element that contains the content you want to conditionally render.
+
+Using an `<ng-content>` element in these cases is not recommended, because when the consumer of a component supplies the content, that content is always initialized, even if the component does not define an `<ng-content>` element or if that `<ng-content>` element is inside of an ngIf statement.
+
+With an `<ng-template>` element, you can have your component explicitly render content based on any condition you want, as many times as you want. Angular will not initialize the content of an `<ng-template>` element until that element is explicitly rendered.
+
+## Pipe
+
+Pipes in Angular are a powerful feature that allows you to transform data directly within your templates. They enable you to declare a transformation function once and use it across multiple templates, making your code more reusable and maintainable.
+
+Using Built-in Pipes
+
+Angular provides a set of built-in pipes in the @angular/common package. Some of the commonly used pipes include:
+
+CurrencyPipe: Transforms a number to a currency string, formatted according to locale rules.
+
+DatePipe: Formats a Date value according to locale rules.
+
+DecimalPipe: Transforms a number into a string with a decimal point, formatted according to locale rules.
+
+UpperCasePipe: Transforms text to all upper case.
