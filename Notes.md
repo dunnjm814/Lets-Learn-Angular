@@ -133,3 +133,13 @@ type X = {
 Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
 
 [Typescript Type vs Interface](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+
+## Directives
+
+Directives are angular syntax that you can use to "enhance" elements. Directives dont have a template. 
+example: NgModel directive helps with extracting and changing user input values.
+
+two way binding: Two-way binding in Angular allows synchronization of data between the Model (data) and the View (UI). It combines the syntax from property binding and event binding. The ngModel directive is used to achieve two-way binding on HTML form elements.
+
+not all directives use two way binding, ngModel is one that does.
+`[(ngModel)]` is the syntax angular recognizes for two way data binding.
