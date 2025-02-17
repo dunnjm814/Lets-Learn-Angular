@@ -1,7 +1,7 @@
 <app-new-task *ngIf="isAddingTask" 
     [userId]="userId"
     (close)="onCloseAddTask()"
-    (add)="onAddTask($event)"></app-new-task>
+    ></app-new-task>
 
 <section id="tasks">
     <header>
@@ -12,7 +12,7 @@
     </menu>
     <ul>
         <li *ngFor="let task of selectedUserTasks">
-            <app-task [task]="task" (complete)="onCompleteTask($event)"></app-task>
+            <app-task [task]="task"></app-task>
         </li>
     </ul>
 </section>
